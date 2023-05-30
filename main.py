@@ -21,7 +21,7 @@ class Game(ShowBase):
         self.Actor.reparentTo(self.render)
 
         #Loop
-        self.Actor.loop("walk")
+    
 
 
 
