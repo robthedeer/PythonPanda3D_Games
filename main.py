@@ -6,6 +6,7 @@ from direct.actor.Actor import Actor
 from panda3d.core import AmbientLight
 from panda3d.core import Vec4
 from panda3d.core import DirectionalLight
+#from  panda3d.core import Vec4,Vec3
 class Game(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
@@ -46,6 +47,9 @@ class Game(ShowBase):
         self.mainLightNodePath.setHpr(45,-45,0)
         self.render.setLight(self.mainLightNodePath)
 
+        #Task manager method
+       # self.updateTask =self.taskMgr.add(self.update,"update")
+
 
         #set a key-map diectionary for key responses
         self.keyMap ={
@@ -69,6 +73,19 @@ class Game(ShowBase):
     def updateKeyMap(self,controlName,controlState):
         self.keyMap[controlName]=controlState
         print(controlName,"set to",controlState)
+    #Update and controls
+    #def update(self,task,dt):
+        #get the amount of time since the last update
+       # self.dt =self.globalClock.getDt()
+        #if the keys are pressed , use the time and clock  function to calcuclate how fare to move the character
+       # if self.keyMap["up"]:
+           # self.Actor.setPos(self.Actor.getPos()+Vec3(0,5.0*dt,0))
+        #if self.keyMap["down"]:
+            #self.Actor.setPos(self.Actor)
+            
+            
+            
+        #return task.cont
 
 
 game =Game()
