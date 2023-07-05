@@ -33,7 +33,7 @@ class Game(ShowBase):
         
         #Move the camera to a position high above the screen
         # # --that is, offset it along the z-axis.
-        self.camera.setPos(0,0,32)
+        self.camera.setPos(0,0,27)
         self.camera.setP(-90)
 
         #Light and color
@@ -48,7 +48,7 @@ class Game(ShowBase):
         self.render.setLight(self.mainLightNodePath)
 
         #Task manager method
-       # self.updateTask =self.taskMgr.add(self.update,"update")
+       self.updateTask =self.taskMgr.add(self.update,"update")
 
 
         #set a key-map diectionary for key responses
@@ -74,14 +74,14 @@ class Game(ShowBase):
         self.keyMap[controlName]=controlState
         print(controlName,"set to",controlState)
     #Update and controls
-    #def update(self,task,dt):
+    def update(self,task,dt):
         #get the amount of time since the last update
-       # self.dt =self.globalClock.getDt()
+       self.dt =self.globalClock.getDt()
         #if the keys are pressed , use the time and clock  function to calcuclate how fare to move the character
-       # if self.keyMap["up"]:
-           # self.Actor.setPos(self.Actor.getPos()+Vec3(0,5.0*dt,0))
-        #if self.keyMap["down"]:
-            #self.Actor.setPos(self.Actor)
+        if self.keyMap["up"]:
+           self.Actor.setPos(self.Actor.getPos()+Vec3(0,5.0*dt,0))
+        if self.keyMap["down"]:
+            self.Actor.setPos(self.Actor.getPos()+)
             
             
             
